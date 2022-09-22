@@ -76,6 +76,10 @@ Click [뉴비의 깃허브 주소](https://github.com/newbieccc) </br>= `[뉴비
 </br>= `![text](url)`
 </br>- 절대주소 / 상대주소 가능
 
+<img src="https://raw.githubusercontent.com/newbieccc/TIL-Today-I-Learned-/4e3d3e52ea879803504f8189026586da9ba9c1c1/etc/images/markdown_img.png" width=200 height=200 />
+
+`<img src=이미지 주소.png" width=200 height=200 />` = 사이즈 조절 가능
+
 ---
 
 ### 테이블
