@@ -1,6 +1,6 @@
 # Spring Study
 
-### 인텔리제이 장점
+## 인텔리제이 장점
 
 - 강력한 추천 기능(Smart Completion)
 - 훨씬 더 다양한 리팩토링과 디버깅 기능
@@ -15,7 +15,7 @@
 - Maven, Gradle과 같은 빌드 도구 기능 지원
 - 깃 & 깃허브와 같은 VCS(버전 관리 시스템) 기능 지원
 - 스프링 부트의 경우 톰캣과 별도의 외장 서버 업이 실행 가능
-- HTML과 CSS, 자바스크립트에 대한 지원은 부족 <u>(VS Code를 사용할 것)</u>
+- HTML과 CSS, 자바스크립트에 대한 지원은 부족 (VS Code를 사용할 것)
 
 ### build.gradle 설정하기
 
@@ -78,15 +78,54 @@ dependencies {
 }
 ```
 
-<hr>
+---
 
 - Setting : ctrl + alt + s
 - Action : ctrl + shift + a
+- 컨텍스트 액션 : alt + enter
+
+- 전체검색 : shift + shift
+  - 특정 클래스 검색 : ctrl + n
+  - 메서드 or 전역변수 검색 : ctrl + alt + shift + n
+  - 파일 검색 : ctrl + shift + n
+
+- 기본 코드 완성 : ctrl + space
+- 구문 완료 : ctrl + shift + enter
+
+- 코드 선택 범위
+  - 확장 : ctrl + w
+  - 축소 : ctrl + shift + w
+
+- 한 줄 주석 : ctrl + /
+- 블럭 주석 : ctrl + shift + /
+
+- 줄 복제 : ctrl + d
+- 줄 삭제 : ctrl + y
+
+- 코드 조각 이동
+  - 한 줄 위로 : alt + shift + ↑
+  - 한 줄 아래로 : alt + shift + ↓
+- 코드 메서드 이동
+  - 메서드 위로 : ctrl + shift + ↑
+  - 메서드 아래로 : ctrl + shift + ↓
+
+- 가독성 향상
+  - 코드 조각 접기 : ctrl + -
+  - 파일 내 모두 접기 : ctrl + shift + -
+- 코드 확장
+  - 코드 영역 확장 : ctrl + =
+  - 파일 내 모두 확장 : ctrl + shift + =
+
+- 둘러싸기 및 줄 바꿈 해제
+  - 선택한 코드 둘러싸기 : ctrl + alt + t
+  - 래핑 해제하여 돌아가기 : ctrl + shift + delete
+
 - terminal 설정
 
-<hr>
+---
 
 ### 참고사항
+
 - 책은 시기가 좀 지난 부분이라 아래 해당 내역으로 수정하여 진행한다.
 - 책 : compile ('org.springframework.boot:spring-boot-starter-web')
 - 수정 : implementation 'org.springframework.boot:spring-boot-starter-web'
