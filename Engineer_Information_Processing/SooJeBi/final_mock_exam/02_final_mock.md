@@ -155,6 +155,7 @@
   - `TCP(Transmission Control Protocol)` / `UDP(User Datagram Protocol)`
 
 >- 전송 계층은 상위 계층들이 데이터 전달의 유효성이나 효율성을 생각하지 않도록 해주면서 종단 간의 사용자들에게 신뢰성 있는 데이터를 전달하는 계층이다
+
 - 전송 계층 프로토콜
 
 |||
