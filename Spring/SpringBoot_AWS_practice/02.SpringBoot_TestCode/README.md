@@ -1,0 +1,96 @@
+# 스프링부트에서 테스트 코드를 작성하자
+
+## 테스트 코드
+
+- TDD != 단위 테스트(Unit Test)
+- TDD = 테스트가 주도하는 개발 -> (테스트 코드를 먼저 작성하는 것부터 시작한다.)
+- ['TDD 실천법과 도구' 공개 PDF](https://repo.yona.io/doortts/blog/issue/1)
+
+## 레드 그린 사이클
+
+>- Red = 항상 실패하는 테스트를 먼저 작성하고
+>- Green = 테스트가 통과하는 프로덕션 코드를 작성하고
+>- Refactor = 테스트가 통과하면 프로덕션 코드를 리팩토링한다.
+
+## 단위테스트
+
+- 단위테스트 = TDD의 `첫 번째 단계인 기능 단위의 테스트 코드를 작성`하는 것
+- 테스트 코드를 꼭 먼저 작성해야 하는 것도 아니고, 리팩토링도 포함되지 않는다.
+- 순수하게 테스트 코드만 작성하는 것을 이야기한다.
+
+### 단위 테스트 코드 작성의 이점
+
+>- 단위 테스트는 개발단계 초기에 문제를 발견하게 도와준다.
+>- 단위 테스트는 개발자가 나중에 코드를 리팩토링하거나 라이브러리 업그레이드 등에서
+기존 기능이 올바르게 작동하는지 확인할 수 있다. (예, 회귀 테스트)
+>- 단위 테스트는 기능에 대한 불확실성을 감소시킬 수 있다.
+>- 단위 테스트는 시스템에 대한 실제 문서를 제공한다. 즉, 단위 테스트 자체가 문서로 사용할 수 있다.
+
+## 테스트 코드가 없다면?
+
+1. 매번 코드를 수정할 때마다 톰캣을 내렸다가 다시 실행하는 일을 반복하게 된다.
+2. System.out.println();을 통해 눈으로 검증해야만 한다.
+3. 새로운 기능이 추가될 때, 기존에 잘 되던 기능에 문제가 없도록 보장해준다.
+
+- xUnit = 대중적인 테스트 프레임워크
+
+---
+
+```java
+package com.newbieccc.book.springboot.web;
+
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+
+@RunWith(SpringRunner.class)
+//테스트를 진행할 때 JUnit에 내장된 실행자 외에 다른 실행자를 실행시킨다.
+//여기서는 SpringRunner라는 스프링 실행자를 사용한다.
+//즉, 스프링 부트 테스트와 JUnit 사이에 연결자 역할을 한다.
+@WebMvcTest
+//여러 스프링 테스트 어노테이션 중, Web(Spring MVC)에 집중할 수 있는 어노테이션이다.
+//선언할 경우 @Controller, @controllerAdvice 등을 사용할 수 있다.
+//단, @Service, @Component, @Repository 등은 사용할 수 없다.
+//여기서는 컨트롤러만 사용하기 때문에 선언한다.
+public class HelloControllerTest {
+
+    @Autowired
+    //@Autowired -> 스프링이 관리하는 빈(Bean)을 주입 받는다.
+    private MockMvc mvc;
+    //웹 API를 테스트할 때 사용한다.
+    //스프링 MVC 테스트의 시작점이다.
+    //이 클래스를 통해 HTTP GET, POST 등에 대한 API 테스트를 할 수 있다.
+
+    @Test
+    public void hello가_리턴된다() throws Exception {
+        String hello = "hello";
+        mvc.perform(get("/hello"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(hello));
+
+        //mvc.perform(get("/hello"))
+        //MockMvc를 통해 /hello 주소로 HTTP GET 요청을 한다.
+        //체이닝이 지원되어 아래와 같이 여러 검증 기능을 이어서 선언할 수 있다.
+
+        //.andExpect(status().isOk())
+        //mvc.perform의 결과를 검증한다.
+        //HTTP Header의 Status를 검증한다.
+        //우리가 흔히 알고 있는 200, 404, 500등의 상태를 검증한다.
+        //여기선 OK 즉, 200인지 아닌지를 검증한다.
+
+        //.andExpect(content().string(hello))
+        //mvc.perform의 결과를 검증한다.
+        //응답 본문의 내용을 검증한다.
+        //Controller에서 "hello"를 리턴하기 때문에 이 값이 맞는지 검증한다.
+
+    }
+}
+```
+
+---
+
+### 단축키
+
+- 패키지 가져오기 : alt + enter
