@@ -27,7 +27,7 @@
 ### 03. 해당 용어
 
 - 명령어를 텍스트로 입력하여 조작하는 사용자 인터페이스는 무엇인가?
-  - `CLI(Commad Line Interface)`
+  - `CLI(Command Line Interface)`
 
 - UI 유형
 
