@@ -2,8 +2,10 @@
 
 ## URI (Uniform Resource Identifier)
 
+- 인터넷에 있는 자원을 나타내는 유일한 주소
+- URI의 존재는 인터넷에서 요구되는 기본조건으롯서 인터넷 프로토콜에 항상 붙어 다닌다.
 - URI는 로케이터(locator), 이름(name) 또는 둘다 추가로 분류될 수 있다.
-- URI 표준 스펙 (https://www.ietf.org/rfc/rfc3986.txt)
+- URI 표준 스펙 링크(https://www.ietf.org/rfc/rfc3986.txt)
 
 ### # URI의 형태
 
@@ -93,3 +95,4 @@
 ### 참조
 
 - [인프런 - 모든 개발자를 위한 HTTP 웹 기본 지식 / 김영한님](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/dashboard)
+- [통합 자원 식별자 - 위키백과](https://ko.wikipedia.org/wiki/%ED%86%B5%ED%95%A9_%EC%9E%90%EC%9B%90_%EC%8B%9D%EB%B3%84%EC%9E%90)
