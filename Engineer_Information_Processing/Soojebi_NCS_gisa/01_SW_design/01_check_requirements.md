@@ -124,7 +124,7 @@
 ### 14. UML(Unified Modeling Language)에 대한 설명
 
 - UML(Unified Modeling Language)에 대한 설명
-  - 기능적 모델은 사용자 측면에서 본 시스템 기능미여, UML에서는 Use Case Diagram을 사용한다.
+  - 기능적 모델은 사용자 측면에서 본 시스템 기능이며, UML에서는 Use Case Diagram을 사용한다.
   - 정적 모델은 객체, 속성, 연관 관계, 오퍼레이션의 시스템 구조를 나타내며, UML에서는 Class Diagram을 사용한다.
   - 동적 모델은 시스템의 내부 동작을 말하며, UML에서는 Sequence Diagram, State Diagram, Activity Diagram을 사용한다.
 - Sequence Diagram은 객체들 사이의 메시지 교환을 나타낸다
@@ -221,7 +221,7 @@
   - 구체적인 실천 방법을 정의하고 있으며, 개발 문서보다는 소스 코드에 중점을 둔다.
 - 대표적인 구조적 방법론 중 하나이다.(x)
 - XP(eXtreme Programming)는 대표적인 애자일 방법론이다.
-- XP는 의사소통 개선과 즉각적 피드백으로 소프트웨어 품질을 높이기 ㅎ위한 방법론으로 기존의 방법론에 비해 실용성을 강조한 방법론이다.
+- XP는 의사소통 개선과 즉각적 피드백으로 소프트웨어 품질을 높이기 위한 방법론으로 기존의 방법론에 비해 실용성을 강조한 방법론이다.
 
 ### 45. 다음 설명에 해당하는 용어는?
 
