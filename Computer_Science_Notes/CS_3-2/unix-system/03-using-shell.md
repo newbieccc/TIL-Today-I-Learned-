@@ -36,8 +36,43 @@
         - /etc/passwd 파일에 다음과 같은 라인이 있음
         - kdhong:x:1000:1000:KilDong Hong:/home/kdhong:/bin/bash
 - 셸 선택하기
+    - 기본 셸을 변경할 수 있음
+        - chsh -s /bin/sh
+    - 터미널 창을 '대화형 셸'이라고도 함
+        - 셸을 종료하려면 exit 명령 또는 ctrl+d를 실행
+        - 로그인 셸이 아님
+    - 로그인 셸과 비로그인 셸을 구별해야 함
+        - logout 명령은 로그인 셸에서만 가능
+        - 참고로 ctrl+alt+F1~F6으로 가상 콘솔을 사용할 수 있음
+        - 셸 프롬프트에서 셸 프로그램을 실행하면 서브 셸이 실행됨
 
 ### (2) 셸 명령
+
+- 셸 명령의 형식
+    - $ 명령어 옵션 인수
+        - 예: usermod -L kdhong
+        - 옵션과 인수는 여럿일 수 있으며 선택적 또는 필수적
+    - 대개 명령어는 프로그램의 이름
+    - 관리자 명령 또는 일반 사용자 명령이 있음
+    - 가장 간단한 형태의 실행은 명령의 이름만 사용하는 것
+        - who, date, ls, pwd
+    - chsh 명령
+        - 기본 셸을 바꾸는 명령
+        - chsh[options][username]
+            - 대괄호는 생략 가능, 이탤릭체는 적당한 내용으로 대체해야 함을 의미
+            - 복수는 여러 개가 가능하다는 의미
+- 옵션과 인수
+    - 짧은 옵션(-)
+        - ls -l
+        - ls -lat와 ls -l -a -t는 같은 것
+    - 긴 옵션(--)
+        - ls --all
+    - 인수는 명령의 수행 대상을 지정하는 것
+        - cat -n /etc/passwd
+        - grep "KilDong Hong" /etc/passwd
+    - 옵션도 인수를 가질 수 있음
+        - chsh -s /bin/sh kdhong
+        - chsh --chell=/bin/bash kdhong
 
 ### (3) 명령 히스토리
 
