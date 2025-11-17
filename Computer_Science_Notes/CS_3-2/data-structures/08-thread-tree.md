@@ -93,3 +93,30 @@ void inorder(tfNode *startNode) {
     - ![img.png](image/08-06.png)
 
 ### (3) 스레드 트리 순회, 삽입, 삭제
+
+- 중위 순회 스레드 트리
+    - 중위 순회 스레드 트리의 중위 순회 연산
+
+```C
+```c
+typedef struct thNode {
+    struct thNode *left;
+    char data;
+    struct thNode *right;
+    int threadFlag;
+} thNode;
+```
+
+```C
+```c
+void inorder(tfNode* root) {
+    tfNode* ptr = inorderStart(root);
+    while(ptr != NULL) {
+        printf("%c", ptr -> data);
+        if(ptr -> threadFlag)      // 오른쪽 포인터를 스레드로 사용함
+            ptr = ptr -> right;
+        else
+            ptr = inorderStart(ptr -> right);
+    }
+}
+```
